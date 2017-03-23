@@ -1,3 +1,4 @@
+var fs = require('fs');
 var express = require('express');
 var router = express.Router();
 
@@ -29,6 +30,26 @@ router.get('/error', function(req, res, next) {
 
 router.get('/crash', function(req, res, next) {
   process.exit(1);
+});
+
+const mem = [];
+router.get('/leak', function(req, res, next) {
+  mem.push(new Uint8Array(50000));
+});
+
+// http://buildnewgames.com/garbage-collector-friendly-code/
+router.get('/gc', function(req, res, next) {
+  const func = () => {
+    global.x = new Array(1000);
+  }
+  for(let i = 0; i < 1000; i++) func();
+});
+
+const handles = [];
+router.get('/handles', function(req, res, next) {
+  var filename = __dirname+'package.json';
+  var readStream = fs.createReadStream(filename);
+  handles.push(readStream);
 });
 
 module.exports = router;
