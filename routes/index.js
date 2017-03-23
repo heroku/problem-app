@@ -35,6 +35,7 @@ router.get('/crash', function(req, res, next) {
 const mem = [];
 router.get('/leak', function(req, res, next) {
   mem.push(new Uint8Array(50000));
+  res.render('index', { title: 'Express' });
 });
 
 // http://buildnewgames.com/garbage-collector-friendly-code/
@@ -43,6 +44,7 @@ router.get('/gc', function(req, res, next) {
     global.x = new Array(1000);
   }
   for(let i = 0; i < 1000; i++) func();
+  res.render('index', { title: 'Express' });
 });
 
 const handles = [];
@@ -50,6 +52,7 @@ router.get('/handles', function(req, res, next) {
   var filename = __dirname+'package.json';
   var readStream = fs.createReadStream(filename);
   handles.push(readStream);
+  res.render('index', { title: 'Express' });
 });
 
 module.exports = router;
