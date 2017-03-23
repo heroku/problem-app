@@ -18,4 +18,17 @@ router.get('/cpu', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/exception', function(req, res, next) {
+  throw new Exception('Kaboom!');
+});
+
+router.get('/error', function(req, res, next) {
+  console.error("418: I'm a teapot");
+  res.status(418).send("I'm a teapot"); // https://en.wikipedia.org/wiki/Hyper_Text_Coffee_Pot_Control_Protocol
+});
+
+router.get('/crash', function(req, res, next) {
+  process.exit(1);
+});
+
 module.exports = router;
