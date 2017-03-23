@@ -19,7 +19,7 @@ router.get('/cpu', function(req, res, next) {
 });
 
 router.get('/exception', function(req, res, next) {
-  throw new Exception('Kaboom!');
+  throw new Error('Kaboom!');
 });
 
 router.get('/error', function(req, res, next) {
