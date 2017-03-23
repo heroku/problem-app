@@ -55,4 +55,13 @@ router.get('/handles', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/proc', function(req, res, next) {
+  var exec = require('child_process').exec;
+  var cmd = 'sleep 1m';
+  exec(cmd, function(error, stdout, stderr) {
+    // command output is in stdout
+  });
+  res.render('index', { title: 'Express' });
+});
+
 module.exports = router;
