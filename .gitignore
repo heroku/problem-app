@@ -1,5 +1,6 @@
 # node
 node_modules/
+.env
 
 # artillery
 artillery_report_*

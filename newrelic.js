@@ -8,7 +8,7 @@ require('dotenv').config()
  */
 exports.config = {
   app_name: ['problem-app'],
-  license_key: process.env.NEW_RELIC_KEY,
+  license_key: process.env.NEW_RELIC_LICENSE_KEY,
   logging: {
     level: 'info'
   }
