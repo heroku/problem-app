@@ -35,7 +35,7 @@ If and when the WellCo engineer can identify which endpoint you are attacking, t
 
 ## Turn About is Fair Play
 
-After you have successfully attacked and defended an end-point, switch roles! WellCo [should attack](https://youtu.be/rLITAQi0aj0?t=1m16s) EvilCorp.
+After you have successfully attacked and defended an end-point, switch roles! WellCo [should attack](https://youtu.be/rLITAQi0aj0?t=1m15s) EvilCorp.
 
 Pick a different endpoint, and work your way through until you can identify the signature of each attack, from logs and NewRelic.
 
