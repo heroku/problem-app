@@ -40,3 +40,7 @@ After you have successfully attacked and defended an end-point, switch roles! We
 Pick a different endpoint, and work your way through until you can identify the signature of each attack, using Logplex and NewRelic.
 
 Happy hacking!
+
+## Additional Resources
+
+- [Bruce Schneier: The security mirage](https://www.ted.com/talks/bruce_schneier)
