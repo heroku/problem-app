@@ -64,4 +64,8 @@ router.get('/proc', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/custom/:value', function(req, res) {
+  newrelic.recordMetric('Custom/MyMetric', req.params.value);
+});
+
 module.exports = router;
