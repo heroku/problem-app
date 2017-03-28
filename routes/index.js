@@ -15,7 +15,7 @@ router.get('/wait', function(req, res, next) {
 
 router.get('/cpu', function(req, res, next) {
   const start = new Date().getTime();
-  while(new Date().getTime() < start + 500);
+  while(new Date().getTime() < start + 100);
   res.render('index', { title: 'Express' });
 });
 
