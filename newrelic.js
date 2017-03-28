@@ -1,4 +1,4 @@
-'use strict'
+require('dotenv').config()
 
 /**
  * New Relic agent configuration.
@@ -8,7 +8,7 @@
  */
 exports.config = {
   app_name: ['problem-app'],
-  license_key: 'a4933a5c71c722e81637607957d65e86526b99ba',
+  license_key: process.env.NEW_RELIC_KEY,
   logging: {
     level: 'info'
   }
