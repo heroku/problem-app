@@ -4,3 +4,6 @@ node_modules/
 
 # artillery
 artillery_report_*
+
+# new relic
+newrelic_agent.log
