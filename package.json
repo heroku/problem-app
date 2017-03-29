@@ -7,7 +7,6 @@
     "loadtest": "artillery quick --duration 60 --rate 10 -n 20 http://localhost:3000"
   },
   "dependencies": {
-    "@newrelic/native-metrics": "^2.1.0",
     "body-parser": "~1.16.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
