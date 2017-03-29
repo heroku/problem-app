@@ -12,24 +12,6 @@ var users = require('./routes/users');
 
 var app = express();
 
-// New relic
-var getMetricEmitter = require('@newrelic/native-metrics')
- 
-var emitter = getMetricEmitter()
-if (emitter.gcEnabled) {
-  emitter.on('gc', (gc) => console.log(gc.type + ': ' + gc.duration))
-}
-if (emitter.usageEnabled) {
-  emitter.on('usage', (usage) => console.log('ru'))
-}
-if (emitter.loopEnabled) {
-  setInterval(function printLoopMetrics() {
-    var loopMetrics = emitter.getLoopMetrics()
-    console.log("Loop time:", loopMetrics.loop)
-    console.log("IO wait time:", loopMetrics.ioWait)
-  }, 1000)
-}
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
